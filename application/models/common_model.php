@@ -331,14 +331,13 @@ class Common_model extends CI_Model {
 	 }//End of insertData Function
 	 
 	 
-	  function updateTableData($table='',$id=0,$updateData=array(),$conditions=array())
+	  function updateTableData($table='',$updateData=array(),$conditions=array())
 	 {
 	 	
-	 	if(is_array($conditions) and count($conditions)>0)		
-	 		$this->db->where($conditions);
-		else	
-		    $this->db->where('id', $id);
-	 	return $this->db->update($table,$updateData);
+            if(is_array($conditions) && count($conditions)>0)		
+                    $this->db->where($conditions);
+            
+            return $this->db->update($table,$updateData);
 		 
 	 }//End of updateTableData Function
 	 

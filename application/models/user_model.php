@@ -6,16 +6,27 @@
  */
 
 class User_Model extends CI_Model {
-    var $id               = '';
-    var $name             = '';
-    var $email            = '';
-    var $password         = '';
-    var $usertype         = '';
-    var $block            = 0; 
-    var $activation_code  = '';
-    var $activation       = 0;
-    var $registerDate     = '';
-    var $lastvisitDate    = '';
+    
+        public $userinfo='';
+        public $id='';
+        public $password='';
+        public $usertype='';
+        public $block='';
+        public $activation_code='';
+        public $activation='';
+        public $register_date='';
+        public $lastvisited_date='';
+        public $firstname='';
+        public $lastname='';
+        public $dob='';
+        public $profile_img='';
+        public $cover_img='';
+        public $gender='';
+        public $country='IN';
+        public $state='';
+        public $district='';
+        public $city='';
+        public $locality='';
    
     function __construct()
     {

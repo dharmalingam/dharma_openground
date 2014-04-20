@@ -8,6 +8,14 @@ class  User extends CI_Controller {
     function User()
     {	   
            parent::__construct();
+           
+          //If user loggedin redirect to home page          
+          if(isLoggedIn())
+	   {
+	   	 redirect('home');
+		 exit;
+	   }
+           
            $this->load->database();
            //$this->config_data->db_config_fetch();
            $this->load->model('User_model');
@@ -39,7 +47,7 @@ class  User extends CI_Controller {
             $data['block']=0;
             $data['activation_code']=trim($accesscode);
             $data['activation']=0;
-            $data['registerDate']=date('Y-m-d h:i:s');
+            $data['register_date']=date('Y-m-d h:i:s');
             $this->User_model->register($data);
             //Send activation link to user
 //            $headers  = 'MIME-Version: 1.0' . "\r\n";
@@ -53,13 +61,6 @@ class  User extends CI_Controller {
     
      function login()
     {   
-         
-          if(isLoggedIn())
-	   {
-	   	 redirect('home');
-		 exit;
-	   }
-
         $this->form_validation->set_rules('useremail', 'Email', 'trim|required|valid_email');
         $this->form_validation->set_rules('userpassword', 'Password', 'required');
          if ($this->form_validation->run() == FALSE){
@@ -91,8 +92,7 @@ class  User extends CI_Controller {
                                              );
 
                             $this->session->set_userdata($user_data);
-                            $updateData['lastvisitDate'] = date('Y-m-d
-                                h:i:s');
+                            $updateData['lastvisited_date'] = date('Y-m-d h:i:s');
                             $this->User_model->updateUser(array('email'=>$user_info->email),$updateData);
                             redirect('home');
 

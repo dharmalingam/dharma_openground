@@ -12,27 +12,27 @@
     <div id="tab-panel" style="display: none;">
      Logo and  content need to past here.  
     </div>
-    <div id="tophead" style="float: right;">
-     <a id="tab" href="javascript:;" class="Tab-opened">Click Here</a>
+        <!--Show hide team-->
+<!--    <div id="tophead" style="float: right;">
+     <a id="tab" href="javascript:;" class="btn-mini Tab-opened">Click Here</a>
      <br/><br/>
-    </div> 
+    </div> -->
         <div class="masthead">
             <ul class="nav nav-pills pull-right">
              <?php if(!$isLoggedIn){?>   
-              <li class="active"><a href="user/login">Login</a></li>
-              <li><a href="user/register">Register</a></li>
+              <li><a class="btn-mini" href="user/login">Login</a></li>
+              <li><a  class="btn-mini" href="user/register">Register</a></li>
               
              <?php }else{?>
-              <li class="active"><a href="user/logout">Logout</a></li>
+              <li><a  class="btn-mini" href="user/logout">Logout</a></li>
              <?php }?>
-             <li class="active"><a href="#">Home</a></li>
              <!--Logout-->
-             <?php if($isLoggedIn){?><li><a href="profile"><?php echo $this->session->userdata('display_name');?></a></li><?php }?>
+             <?php if($isLoggedIn){?><li><a class="btn-mini" href="profile"><?php echo $this->session->userdata('display_name');?></a></li><?php }?>
              
-             <li><a href="#">About</a></li>
-             <li><a href="#">Contact</a></li>
+             <li><a class="btn-mini" href="#">About</a></li>
+             <li><a class="btn-mini" href="#">Contact</a></li>
             </ul>               
-             <a href="<?php echo base_url();?>"><img src="<?php echo base_url()?>/assets/logo/femqueen.png"/></a>
+             <a class="btn-mini" href="<?php echo base_url();?>"><img src="<?php echo base_url()?>/assets/logo/femqueen.png"/></a>
 
         </div>
       <hr>

@@ -7,7 +7,11 @@ class  Home extends CI_Controller {
 	   
 		parent::__construct();
 
-		
+		//If  user does not logged in redirect to login page
+                if(!isLoggedIn())
+                {
+                        redirect('user/login'); exit;
+                }
 		
 	}
 	

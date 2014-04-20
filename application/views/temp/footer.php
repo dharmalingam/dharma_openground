@@ -22,6 +22,28 @@
     <script src="../assets/js/bootstrap/bootstrap-collapse.js"></script>
     <script src="../assets/js/bootstrap/bootstrap-carousel.js"></script>
     <script src="../assets/js/bootstrap/bootstrap-typeahead.js"></script>
+<!--    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>-->
+    <script src="../assets/js/jquery.countdown.min.js"></script>
+     <script>
+      !function ($) {
+        $(function(){
+          // carousel demo
+          $('#myCarousel').carousel()
+          
+          //Search filter dropdown
+        $('#example').popover(data-animation=true);
+          //Counter
+            $(".digits").countdown({
+            image: "../assets/imgs/digits.png",
+            format: "mm:ss",
+            startTime: "25:14"
+            });
+            
+        })
+      }(window.jQuery)
+    </script>
+      
+    <script src="../assets/js/bootstrap/holder/holder.js"></script>
 
 </body>
 </html>
